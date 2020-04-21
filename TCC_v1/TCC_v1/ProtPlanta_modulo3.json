@@ -1,0 +1,406 @@
+{
+  "DatasetName": "Protocolo plantas lenhosas - Modulo 3",
+  "DataSetDescription": "Pesquisa de campo para amostras de plantas lenhosas",
+  "Coordinator": "ICMBIO",
+  "Status": "active",
+  "Fields": [
+    {
+      "FieldName": "Unidade Conservação? ",
+      "Description": "Nome completo da unidade de conservação",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Numero da UAR? ",
+      "Description": "Numero da unidade amostral de referencia",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Letra da Subunidade? ",
+      "Description": "Seleciona a letra da subunidade",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": true,
+      "SelectFromList": true,
+      "ListItens": [
+        {
+          "Name": "A",
+          "CodigoItem": 1
+        },
+        {
+          "Name": "B",
+          "CodigoItem": 2
+        },
+        {
+          "Name": "C",
+          "CodigoItem": 3
+        },
+        {
+          "Name": "D",
+          "CodigoItem": 4
+        }
+        ]
+    },
+    {
+      "FieldName": "Numero da parcela? ",
+      "Description": "Selecione o numero da parcela coletada",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 1,
+      "Max": 10,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controled": true,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Nome do Coletor? ",
+      "Description": "Nome ou abreviação do nome do responsavel pela coleta dos dados",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Data da Coleta? ",
+      "Description": "selecionar a data da coleta",
+      "Type": "Date",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Ponto de registro da subunidade - DATUM? ",
+      "Description": "Escreva em qual protocolo está em empregado a coleta. ex: SIRGAS 2000",
+      "Type": "String",
+      "Order": 2,
+      "Min": 1,
+      "Max": 4,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Ponto de registro da subunidade - FUSO? ",
+      "Description": "Escreva em qual fuso esta sendo realizado a coleta",
+      "Type": "String",
+      "Order": 2,
+      "Min": 1,
+      "Max": 4,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Local da coleta? ",
+      "Description": "Selecionar o local da coleta ativando a localização",
+      "Type": "Location",
+      "Order": 2,
+      "Min": 1,
+      "Max": 4,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Numero da placa? ",
+      "Description": "Escreva o numero ssequencial das placas",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Nome popular da especie de interesse? ",
+      "Description": "Escreva o nome popular da planta coletada",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "CAP(cm)? ",
+      "Description": "Circunferencia a 1,3 metros do solo dada em centimetros",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "DAP(cm)? ",
+      "Description": "Circunferencia a 1,3 metros do solo dada em centimetros",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+        {
+      "FieldName": "Altura - fuste(Hf)? ",
+      "Description": "Altura do fuste em metros",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+        {
+      "FieldName": "Altura - copa(Hc)? ",
+      "Description": "Altura da copa em metros",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Altura - total(Ht)? ",
+      "Description": "Altura total da arvore dada pela soma da altura do fuste a altura da copa em metros",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+      "FieldName": "Medição com instrumento? ",
+      "Description": "Adotada para pelo menos três arvores da parcela para calibrar o olho do avaliador.  A árvore avaliada com este método deverá ter a a notação SIM para este campo. A árvore com altura tomada por estimativa terá o campo riscado",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": true,
+      "SelectFromList": true,
+      "ListItens": [
+        {
+          "Name": "Yes",
+          "CodigoItem": 1
+        },
+        {
+          "Name": "No",
+          "CodigoItem": 2
+        }
+        ]
+    },
+    {
+    "FieldName": " Numero da coleta? ",
+      "Description": "Número de coleta do material botânico. Este número será sequencial",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+    "FieldName": "Cor da flor? ",
+      "Description": "Quando houver material botânico coletado com flor, deverá ser anotada a sua cor",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+    "FieldName": "Cor do fruto? ",
+      "Description": "Quando houver material botânico coletado com fruto, deverá ser anotada a sua cor",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+    "FieldName": "Observações? ",
+      "Description": "Qualquer outra informação julgada relevante a coleta",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+    "FieldName": "Foto de amostra? ",
+      "Description": "Selecione uma imagem da galeria",
+      "Type": "Image",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": false,
+      "SelectFromList": false,
+      "ListItens": []
+    },
+    {
+    "FieldName": "Categoria de Ameaça? ",
+      "Description": "Selecionar o tipo de ameaça",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": true,
+      "SelectFromList": true,
+      "ListItens": [
+        {
+          "Name": "Estadual",
+          "CodigoItem": 1
+        },
+        {
+          "Name": "IBAMA",
+          "CodigoItem": 2
+        },
+        {
+          "Name": "IUCN",
+          "CodigoItem": 3
+        }
+        ]
+    },
+    {
+    "FieldName": "Classe sucessional? ",
+      "Description": "Classe sucessional da espécie de acordo com referências bibliográfica, classificada em Pioneira, Secundária inicial, Secundária tardia e Clímax",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": true,
+      "SelectFromList": true,
+      "ListItens": [
+        {
+          "Name": "Pioneira",
+          "CodigoItem": 1
+        },
+        {
+          "Name": "Secundaria inicial",
+          "CodigoItem": 2
+        },
+        {
+          "Name": "Secundaria tardia",
+          "CodigoItem": 3
+        },
+        {
+          "Name": "Climax",
+          "CodigoItem": 4
+        }
+        ]
+    },
+    {
+    "FieldName": "Sindrome de dispersão? ",
+      "Description": "Dispersão pela fauna (Zoocórica), dispersão pelo vento (Anemocórica), dispersão pela água (Hidrocórica), Dispersão por mecanismos próprios da planta (Autocórica)",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controled": true,
+      "SelectFromList": true,
+      "ListItens": [
+        {
+          "Name": "Zoocórica",
+          "CodigoItem": 1
+        },
+        {
+          "Name": "Anemocórica",
+          "CodigoItem": 2
+        },
+        {
+          "Name": "Hidrocórica",
+          "CodigoItem": 3
+        },
+        {
+          "Name": "Autocórica",
+          "CodigoItem": 4
+        }
+        ]
+    }
+  ]
+}
