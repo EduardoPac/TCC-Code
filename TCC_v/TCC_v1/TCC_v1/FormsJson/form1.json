@@ -1,0 +1,87 @@
+{
+  "Key": null,
+  "DataSetName": "Vacina H1N1",
+  "DataSetDescription": "Formulario de vacinação da downça H1N1",
+  "Coordinator": "cordenador",
+  "Status": "active",
+  "Fields": [
+    {
+      "FieldName": "Nome do Paciente",
+      "Description": "",
+      "Type": "String",
+      "Order": 0,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Idade do Paciente",
+      "Description": "",
+      "Type": "Number",
+      "Order": 0,
+      "Min": 0,
+      "Max": 20,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Data de Nascimento",
+      "Description": "",
+      "Type": "Date",
+      "Order": 0,
+      "Min": 12112015,
+      "Max": 30112030,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Hora de atendimento",
+      "Description": "",
+      "Type": "Time",
+      "Order": 0,
+      "Min": 800,
+      "Max": 1800,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Sintoma Aparente",
+      "Description": "",
+      "Type": "String",
+      "Order": 0,
+      "Min": 0,
+      "Max": 0,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "alergia",
+          "ItemCode": "1"
+        },
+        {
+          "Name": "febre",
+          "ItemCode": "2"
+        },
+        {
+          "Name": "tosse",
+          "ItemCode": "3"
+        }
+      ]
+    }
+  ]
+}

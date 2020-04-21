@@ -16,7 +16,7 @@ namespace TCC_v1.ViewModel
 
         private void LoadDirectory()
         {
-            var loadDirectory = FormDirectoryService.LoadFormsDirectorySqlite();
+            var loadDirectory = FormDirectoryService.LoadFormsDirectory();
 
             Form = new ObservableCollection<Form>(loadDirectory.Form);
         }
