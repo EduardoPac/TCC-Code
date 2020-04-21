@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TCC_v1.View;
 
 namespace TCC_v1.Pages
@@ -11,11 +7,8 @@ namespace TCC_v1.Pages
     {
         public MenuListData()
         {
-
-            this.Add(new MenuItem() { Titulo = "Home" , TargetType = typeof(TabPage) });
-
-            this.Add(new MenuItem() { Titulo = "About", TargetType = typeof(About_Page) });
-
+            this.Add(new MenuItem() { Title = "Forms" , TargetType = typeof(HomePage) });
+            this.Add(new MenuItem() { Title = "About", TargetType = typeof(AboutPage) });
         }
     }
 }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace TCC_v1.Model.Entities
 {
-    public class FormDiretory: ObservatorBaseObject
+    public class FormDirectory: ObservableBaseObject
     {
         private ObservableCollection<Form> form = new ObservableCollection<Form>();
 

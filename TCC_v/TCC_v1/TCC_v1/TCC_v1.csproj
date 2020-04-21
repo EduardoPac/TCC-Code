@@ -44,10 +44,10 @@
     </Compile>
     <Compile Include="Model\Entities\Field.cs" />
     <Compile Include="Model\Entities\Form.cs" />
-    <Compile Include="Model\Entities\FormDiretory.cs" />
+    <Compile Include="Model\Entities\FormDirectory.cs" />
     <Compile Include="Model\Entities\Item.cs" />
-    <Compile Include="Model\Entities\ObservatorBaseObject.cs" />
-    <Compile Include="Model\Services\FormDiretoryService.cs" />
+    <Compile Include="Model\Entities\ObservableBaseObject.cs" />
+    <Compile Include="Model\Services\FormDirectoryService.cs" />
     <Compile Include="Pages\MenuCell.cs" />
     <Compile Include="Pages\MenuItem.cs" />
     <Compile Include="Pages\MenuListData.cs" />
@@ -55,20 +55,13 @@
     <Compile Include="Pages\MenuPage.cs" />
     <Compile Include="Pages\RootPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\TabPage.cs" />
-    <Compile Include="ViewModel\FormDiretoryViewModel.cs" />
+    <Compile Include="ViewModel\FormDirectoryViewModel.cs" />
     <Compile Include="View\About_Page.xaml.cs">
       <DependentUpon>About_Page.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Download_Page.xaml.cs">
-      <DependentUpon>Download_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Forms_Dinamic_Page.cs" />
     <Compile Include="View\Home_Page.xaml.cs">
       <DependentUpon>Home_Page.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Upload_Page.xaml.cs">
-      <DependentUpon>Upload_Page.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -79,12 +72,6 @@
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\Download_Page.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -106,12 +93,6 @@
       <HintPath>..\..\packages\Xamarin.Forms.4.5.0.617\lib\netstandard1.0\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\Upload_Page.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\About_Page.xaml">

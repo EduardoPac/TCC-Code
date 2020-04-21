@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using TCC_v1.Pages;
+using TCC_v1.View;
 using Xamarin.Forms;
 
 namespace TCC_v1
@@ -13,22 +14,19 @@ namespace TCC_v1
         {
             InitializeComponent();
 
-            MainPage = new TCC_v1.Pages.RootPage();
+            MainPage = new RootPage();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
         }
     }
 }

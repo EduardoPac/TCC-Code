@@ -17,8 +17,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
     <JavaMaximumHeapSize />
@@ -260,7 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TCC_v1\TCC_v1.csproj">
-      <Project>{36ce7fa1-ac09-4c93-8b66-ceee5e3b4eaf}</Project>
+      <Project>{5CC518F4-71D6-456C-8E8E-B80054CCF4D9}</Project>
       <Name>TCC_v1</Name>
     </ProjectReference>
   </ItemGroup>

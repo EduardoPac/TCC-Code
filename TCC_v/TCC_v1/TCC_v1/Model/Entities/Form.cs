@@ -1,38 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TCC_v1.Model.Entities
 {
-    public class Form : ObservatorBaseObject
+    public class Form : ObservableBaseObject
     {
-
         public string Key { get; set; }
-
-        public Form()
+        private string dataSetName;
+        public string DataSetName
         {
-            datasetName = "";
-            dataSetDescription = "";
-            coordinator = "";
-            status = "";
-            fields = new List<Field>();
-        }
-
-        private string datasetName;
-
-        public string DatasetName
-        {
-            get { return datasetName; }
-            set { datasetName = value; OnPropertyChanged(); }
+            get => dataSetName;
+            set { dataSetName = value; OnPropertyChanged(); }
         }
 
         private string dataSetDescription;
 
         public string DataSetDescription
         {
-            get { return dataSetDescription; }
+            get => dataSetDescription;
             set { dataSetDescription = value; OnPropertyChanged(); }
         }
 
@@ -40,21 +24,27 @@ namespace TCC_v1.Model.Entities
 
         public string Coordinator
         {
-            get { return coordinator; }
+            get => coordinator;
             set { coordinator = value; OnPropertyChanged(); }
         }
 
-        private String status;
+        private string status;
 
-        public String Status
+        public string Status
         {
-            get { return status; }
+            get => status;
             set { status= value; OnPropertyChanged(); }
         }
 
-        public List<Field> Fields { get => fields; set => fields = value; }
+        public List<Field> Fields { get; set; }
 
-        private List<Field> fields;
-
+        public Form()
+        {
+            dataSetName = "";
+            dataSetDescription = "";
+            coordinator = "";
+            status = "";
+            Fields = new List<Field>();
+        }
     }
 }

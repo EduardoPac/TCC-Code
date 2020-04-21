@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TCC_v1.Model.Entities;
+﻿using TCC_v1.Model.Entities;
 using TCC_v1.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,28 +6,22 @@ using Xamarin.Forms.Xaml;
 namespace TCC_v1.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Home_Page : ContentPage
+    public partial class HomePage : ContentPage
     {
-        public Home_Page()
+        public HomePage()
         {
             InitializeComponent();
-            ToolbarItem r = new ToolbarItem();
-            r.Icon = "sync.png";
-            ToolbarItems.Add(r);
-            BindingContext = new FormDiretoryViewModel();
-            r.SetBinding(MenuItem.CommandProperty, new Binding("CarregarDiretorioCommand"));
-
+            BindingContext = new FormDirectoryViewModel();
             lvForm.ItemSelected += LvForm_ItemSelect;
         }
 
         private void LvForm_ItemSelect(object sender, SelectedItemChangedEventArgs e)
         {
-            Form selecionado = (Form)e.SelectedItem;
-            if (selecionado == null)
-            {
+            var selected = (Form)e.SelectedItem;
+            if (selected == null)
                 return;
-            }
-            Navigation.PushAsync(new Forms_Dinamic_Page(selecionado));
+            
+            Navigation.PushAsync(new FormsDynamicPage(selected));
             lvForm.SelectedItem = null;
         }
     }
