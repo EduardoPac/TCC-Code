@@ -1,2 +1,0 @@
-android.app.Application
-TCC_v1.Android
