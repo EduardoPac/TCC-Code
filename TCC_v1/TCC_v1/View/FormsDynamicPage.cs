@@ -279,7 +279,9 @@ namespace TCC_v1.View
                 {
                     Maximum = currentField.Max,
                     Minimum = currentField.Min,
-                    ThumbColor = Color.Gray
+                    ThumbColor = Color.FromHex("336699"),
+                    MaximumTrackColor = Color.Gray,
+                    MinimumTrackColor = Color.Gray
                 };
 
                 layoutStack.Children.Add(slider);
