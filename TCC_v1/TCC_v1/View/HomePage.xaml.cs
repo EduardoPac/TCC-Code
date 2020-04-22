@@ -34,7 +34,7 @@ namespace TCC_v1.View
 
             var fieldAnswers = new List<FieldAnswer>();
             const int index = 0;
-            Navigation.PushAsync(new Forms_Dinamic_Page(form, index, fieldAnswers));
+            Navigation.PushAsync(new FormsDynamicPage(form, index, fieldAnswers));
             lvForm.SelectedItem = null;
         }
     }

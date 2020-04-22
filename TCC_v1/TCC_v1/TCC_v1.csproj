@@ -71,7 +71,7 @@
     <Compile Include="View\DownloadPage.xaml.cs">
       <DependentUpon>DownloadPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms_Dinamic_Page.cs" />
+    <Compile Include="View\FormsDynamicPage.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>

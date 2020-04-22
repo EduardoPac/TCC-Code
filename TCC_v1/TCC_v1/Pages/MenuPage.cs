@@ -9,7 +9,7 @@ namespace TCC_v1.Pages
         public MenuPage()
         {
             Title = "Menu";
-            Padding = new Thickness(8, 20, 0, 0);
+            Padding = new Thickness(8, 24, 0, 0);
 
             BackgroundColor = Color.White;
 
@@ -20,7 +20,7 @@ namespace TCC_v1.Pages
                 Aspect = Aspect.AspectFit,
                 HeightRequest = 150,
                 Source = "logomenu.png",
-                Margin = new Thickness(0, 0, 0, 16)
+                Margin = new Thickness(0, 0, 0, 24)
             };
 
             var layout = new StackLayout
