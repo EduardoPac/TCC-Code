@@ -1,25 +1,21 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TCC_v1.DAL;
 
 namespace TCC_v1.Model.Entities
 {
-    public class FormAnswer : ObservatoryBaseObject
+    public class FormDb : ObservatoryBaseObject
     {
         [PrimaryKey, AutoIncrement] public int Id { get; set; }
-        
-        public string CollectData { get; set; }
 
         private string dataSetName;
 
         public string DataSetName
         {
             get => dataSetName;
-            set { dataSetName = value; OnPropertyChanged(); }
+            set
+            {
+                dataSetName = value;
+                OnPropertyChanged();
+            }
         }
 
         private string dataSetDescription;
@@ -27,7 +23,11 @@ namespace TCC_v1.Model.Entities
         public string DataSetDescription
         {
             get => dataSetDescription;
-            set { dataSetDescription = value; OnPropertyChanged(); }
+            set
+            {
+                dataSetDescription = value;
+                OnPropertyChanged();
+            }
         }
 
         private string coordinator;
@@ -35,7 +35,11 @@ namespace TCC_v1.Model.Entities
         public string Coordinator
         {
             get => coordinator;
-            set { coordinator = value; OnPropertyChanged(); }
+            set
+            {
+                coordinator = value;
+                OnPropertyChanged();
+            }
         }
 
         private string status;
@@ -50,7 +54,7 @@ namespace TCC_v1.Model.Entities
             }
         }
 
-        public FormAnswer()
+        public FormDb()
         {
             dataSetName = "";
             dataSetDescription = "";

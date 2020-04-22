@@ -1,0 +1,371 @@
+{
+  "DataSetName": "Protocolo Borboletas",
+  "DataSetDescription": "Pesquisa de campo para contagem amostras de borboletas",
+  "Coordinator": "ICMBIO",
+  "Status": "active",
+  "Fields": [
+    {
+      "FieldName": "Estado? ",
+      "Description": "Sigla do estado",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Municipio? ",
+      "Description": "Nome do municipio",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Unidade de Conservação? ",
+      "Description": "Nome completo da unidade de conservação",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Trasnsecto principal? ",
+      "Description": "Numero do ponto de referencia sorteado",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "UAR - Trasnsecto secundario? ",
+      "Description": "selecionar um trasnsecto secundario se for necessario",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "A",
+          "IdItem": 1
+        },
+        {
+          "Name": "B",
+          "IdItem": 2
+        },
+        {
+          "Name": "C",
+          "IdItem": 3
+        },
+        {
+          "Name": "D",
+          "IdItem": 4
+        }
+        ]
+    },
+    {
+      "FieldName": "Numero da verificação na campanha? ",
+      "Description": "Escreva o numero da campanha que está sendo realizada",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Hora de instalação ou verificação? ",
+      "Description": "Selecione a hora de instalação ou de verificação da armadilha",
+      "Type": "Time",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Numero da Armadilha? ",
+      "Description": "Selecionar o numero da armadilha",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 1,
+      "Max": 4,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Nome do Coletor? ",
+      "Description": "Escreva o nome do coletor que esta realizando a pesquisa",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Numero de registro? ",
+      "Description": "Escreva o numero de registro da coleta",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Numero de Marcação na campanha? ",
+      "Description": "Escreva o numero de marcação da campanha que está sendo realizada",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+        {
+      "FieldName": "Data de Coleta? ",
+      "Description": "Selecione a data de coleta",
+      "Type": "Date",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+        {
+      "FieldName": "Condição do Tempo - Temperatura ? ",
+      "Description": "temperatura em gruaus celcius na sombra (medido com termometro padrão da iniciativa)",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+        {
+      "FieldName": "Condição do Tempo - Velocidade do vento? ",
+      "Description": "Velocidade em nós (medido com equipamento apropriado) ",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+        {
+      "FieldName": "Condição do Tempo - Chuva? ",
+      "Description": "Seleciaona a condição do tempo na coleta",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Sem",
+          "IdItem": 1
+        },
+        {
+          "Name": "Pouca",
+          "IdItem": 2
+        },
+        {
+          "Name": "Muita",
+          "IdItem": 3
+        }
+        ]
+    },
+        {
+      "FieldName": "Condição do Tempo - Nebulosidade? ",
+      "Description": "Seleciaona a condição do tempo na coleta",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Nenhuma",
+          "IdItem": 1
+        },
+        {
+          "Name": "Parcial",
+          "IdItem": 2
+        },
+        {
+          "Name": "Total",
+          "IdItem": 3
+        }
+        ]
+    },
+    {
+      "FieldName": "Foto ventral? ",
+      "Description": "Selecione uma foto da Galeria",
+      "Type": "Image",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+    "FieldName": "Foto dorsal? ",
+      "Description": "Selecione uma foto da Galeria",
+      "Type": "Image",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Tribo? ",
+      "Description": "Escreva a tribo de borboleta catalogada",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Tipo? ",
+      "Description": "Selecione o tipo de borboleta catalogada",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": [{
+          "Name": "Frugivora",
+          "IdItem": 1
+        },
+        {
+          "Name": "Não Frugivora",
+          "IdItem": 2
+        }
+        ]
+    },
+    {
+    "FieldName": "Genero Taxonômica? ",
+      "Description": "Nome do genero taxonomica",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+    "FieldName": "Especie? ",
+      "Description": "Nome completo da especie(genero+epidoto)",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+    "FieldName": "Sub familia? ",
+      "Description": "Nome da subfamilia",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+    "FieldName": "Observações? ",
+      "Description": "Qualquer outra informação julgada relevante a coleta",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    }
+  ]
+}

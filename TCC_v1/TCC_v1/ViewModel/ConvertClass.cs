@@ -1,84 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TCC_v1.DAL;
 using TCC_v1.Model.Entities;
+using Xamarin.Forms.Internals;
 
 namespace TCC_v1.ViewModel
 {
     public class ConvertClass
     {
-
-        public Form ConvBDtoForm(FormBD fbd)
+        public static Form ConvertDataFormToForm(FormDb dataForm)
         {
-            DALA data = new DALA();
+            var data = new Database();
 
-            List<FieldBD> fibd = data.getFieldList(fbd.IDForm);
+            var fields = data.GetFieldList(dataForm.Id);
 
-            Form ret = new Form();
-
-            ret.Coordinator = fbd.Coordinator;
-            ret.DataSetDescription = fbd.DataSetDescription;
-            ret.DatasetName = fbd.DatasetName;
-            ret.Status = fbd.Status;
-
-            for(int x = 0; x < fibd.Count; x++)
+            var form = new Form
             {
-                Field aux = new Field();
+                Coordinator = dataForm.Coordinator,
+                DataSetDescription = dataForm.DataSetDescription,
+                DataSetName = dataForm.DataSetName,
+                Status = dataForm.Status
+            };
 
-                aux.Controled = fibd[x].Controled;
-                aux.Description = fibd[x].Description;
-                aux.FieldName = fibd[x].FieldName;
-                aux.Max = fibd[x].Max;
-                aux.Min = fibd[x].Min;
-                aux.Order = fibd[x].Order;
-                aux.PrimaryKey = fibd[x].PrimaryKey;
-                aux.Required = fibd[x].Required;
-                aux.SelectFromList = fibd[x].SelectFromList;
-                aux.Type = fibd[x].Type;
-
-                ret.Fields.Add(aux);
-            }
-
-            
-
-            for(int y = 0; y < fibd.Count; y++)
+            fields.ForEach((field =>
             {
-                if(ret.Fields[y].SelectFromList == true)
+                var newField = new Field
                 {
-                    List<ItemBD> aux2 = new List<ItemBD>();
-                    aux2 = data.getItemList(fibd[y].IDField);
+                    Controlled = field.Controlled,
+                    Description = field.Description,
+                    FieldName = field.FieldName,
+                    Max = field.Max,
+                    Min = field.Min,
+                    Order = field.Order,
+                    PrimaryKey = field.PrimaryKey,
+                    Required = field.Required,
+                    SelectFromList = field.SelectFromList,
+                    Type = field.Type
+                };
+                form.Fields.Add(newField);
+            }));
 
-                    for(int k = 0; k < aux2.Count; k++)
-                    {
-                        ret.Fields[y].ListItens.Add(aux2[k]);
-                    }
+            for (var y = 0; y < fields.Count; y++)
+            {
+                if (form.Fields[y].SelectFromList != true) 
+                    continue;
 
-                }
+                var items = data.GetItemList(fields[y].IdField);
 
-
+                foreach (var item in items) 
+                    form.Fields[y].ListItems.Add(item);
             }
 
-            return ret;
-
-
+            return form;
         }
 
-        public FormAnswerBD ConvFormtoBD(Form frm)//implementar quando salvar
+        public static FormAnswer CreateFormAnswer(Form form)
         {
-            FormAnswerBD fabd = new FormAnswerBD();
-            fabd.Coordinator = frm.Coordinator;
-            fabd.DataSetDescription = frm.DataSetDescription;
-            fabd.DatasetName = frm.DatasetName;
-            fabd.Status = frm.Status;
-            
-            return fabd;
+            var newFormAnswer = new FormAnswer
+            {
+                CollectData = DateTimeOffset.Now.ToString(),
+                Coordinator = form.Coordinator,
+                DataSetDescription = form.DataSetDescription,
+                DataSetName = form.DataSetName,
+                Status = form.Status
+            };
 
-
+            return newFormAnswer;
         }
-
-
     }
 }

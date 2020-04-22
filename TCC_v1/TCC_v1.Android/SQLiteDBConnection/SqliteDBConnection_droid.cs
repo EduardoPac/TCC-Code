@@ -1,38 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using TCC_v1.Droid.SQLiteDBConnection;
 using TCC_v1.Infra;
 using SQLite;
 using System.IO;
 
-[assembly: Dependency(typeof(SqliteDBConnection_droid))]
+[assembly: Dependency(typeof(SqLiteDbConnectionDroid))]
 namespace TCC_v1.Droid.SQLiteDBConnection
 {
-    class SqliteDBConnection_droid : SqliteDBConnection
+    internal class SqLiteDbConnectionDroid : ISqLiteDbConnection
     {
-        public SqliteDBConnection_droid()
+        public SqLiteDbConnectionDroid()
         {
-
         }
         public SQLiteConnection DbConnection()
         {
             SQLitePCL.Batteries.Init();
-            var sqliteFilename = "Teste17.db3";
-            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            var path = Path.Combine(documentsPath, sqliteFilename);
-            // create the connection
+            const string sqLiteFileName = "data.db3";
+            var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            var path = Path.Combine(documentsPath, sqLiteFileName);
             var conn = new SQLite.SQLiteConnection(path);
-            //return the database connection
             return conn;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using Foundation;
 using TCC_v1.iOS;
 using TCC_v1.Model.Services;
 using UIKit;
@@ -46,8 +47,8 @@ namespace TCC_v1.iOS
             if (image != null)
             {
                 // Convert UIImage to .NET Stream object
-                NSData data = image.AsJPEG(1);
-                Stream stream = data.AsStream();
+                var data = image.AsJPEG(1);
+                var stream = data.AsStream();
 
                 // Set the Stream as the completion of the Task
                 taskCompletionSource.SetResult(stream);

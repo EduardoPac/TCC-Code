@@ -1,0 +1,144 @@
+{
+  "DataSetName": "Dados Meteorológicos",
+  "DataSetDescription": "Formulario para coleta de dados meteorológicos",
+  "Coordinator": "Thiago",
+  "Status": "active",
+  "Fields": [
+    {
+      "FieldName": "Qual a temperatura atual? ",
+      "Description": "Arrastar a barra para encontrar a temperatura da coleta",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Qual a estação do ano está sendo realizado a coleta? ",
+      "Description": "Seleciona a estação do ano está sendo realizada a coleta",
+      "Type": "String",
+      "Order": 5,
+      "Min": 0,
+      "Max": 0,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Verão",
+          "IdItem": 1
+        },
+        {
+
+          "Name": "Outono",
+          "IdItem": 2
+        },
+        {
+
+          "Name": "Inverno",
+          "IdItem": 3
+        },
+        {
+
+          "Name": "Primavera",
+          "IdItem": 4
+        }
+      ]
+    },
+    {
+      "FieldName": "Na região venta muito? ",
+      "Description": "Seleciano apartir dos togles qual a resposta",
+      "Type": "String",
+      "Order": 1,
+      "Min": 0,
+      "Max": 20,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Yes",
+          "IdItem": 1
+        },
+        {
+
+          "Name": "No",
+          "IdItem": 2
+        }
+      ]
+    },
+    {
+      "FieldName": "O local da coleta está em que situação? ",
+      "Description": "Seleciona a estação do ano está sendo realizada a coleta",
+      "Type": "String",
+      "Order": 5,
+      "Min": 0,
+      "Max": 0,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Ensolarado",
+          "IdItem": 1
+        },
+        {
+
+          "Name": "Nublado",
+          "IdItem": 2
+        },
+        {
+
+          "Name": "Chuvoso",
+          "IdItem": 3
+        }
+      ]
+    },
+    {
+      "FieldName": "Data da coleta? ",
+      "Description": "Seleciona a data do nacimento clicando na data acima",
+      "Type": "Date",
+      "Order": 3,
+      "Min": 12112015,
+      "Max": 30112030,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Hora de Coleta? ",
+      "Description": "Seleciona a hora da coleta clicando na hora acima",
+      "Type": "Time",
+      "Order": 3,
+      "Min": 12112015,
+      "Max": 30112030,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Local de coleta dos dados? ",
+      "Description": "Seleciona o local da coleta apartir do GPS do aparelho",
+      "Type": "Location",
+      "Order": 4,
+      "Min": 8,
+      "Max": 18,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    }
+  ]
+}

@@ -1,39 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TCC_v1.DAL;
 using TCC_v1.Model.Entities;
+using Xamarin.Forms.Internals;
 
 namespace TCC_v1.ViewModel
 {
-    public class Form_Dinamic_view_model
+    public class FormDynamicViewModel
     {
-        public void SaveDAL(List<FieldAnswerBD> resp, Form form)
+        public static void SaveData(List<FieldAnswer> fieldAnswers, Form form)
         {
-            ConvertClass cv = new ConvertClass();
+            var fieldAnswer = ConvertClass.CreateFormAnswer(form);
 
-            FormAnswerBD fabd = cv.ConvFormtoBD(form);
+            var data = new DatabaseAnswer();
+            data.InsertFormAnswer(fieldAnswer);
 
-            string datanow = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-            string horanow = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString();
-
-
-            fabd.datacoleta = "Coleta: " + datanow + " - " + horanow;
-
-            DALAswer data = new DALAswer();
-            data.InsertFormA(fabd);
-
-            for (int g = 0; g < resp.Count; g++)
+            foreach (var answers in fieldAnswers)
             {
-                resp[g].IDFormAnswer1 = fabd.IDFormAnswer;
+                answers.IdFormAnswer = fieldAnswer.Id;
             }
 
-            for (int h = 0; h < resp.Count; h++)
-            {
-                data.InsertFieldA(resp[h]);
-            }
+            fieldAnswers.ForEach((answer => data.InsertFieldAnswer(answer)));
         }
     }
 }

@@ -4,54 +4,65 @@ using TCC_v1.DAL;
 
 namespace TCC_v1.Model.Entities
 {
-    public class Form : ObservatorBaseObject
+    public class Form : ObservatoryBaseObject
     {
+        private string dataSetName;
 
-
-        public Form()
+        public string DataSetName
         {
-            datasetName = "";
-            dataSetDescription = "";
-            coordinator = "";
-            status = "";
-            fields = new List<Field>();
-        }
-
-        private string datasetName;
-
-        public string DatasetName
-        {
-            get { return datasetName; }
-            set { datasetName = value; OnPropertyChanged(); }
+            get => dataSetName;
+            set
+            {
+                dataSetName = value;
+                OnPropertyChanged();
+            }
         }
 
         private string dataSetDescription;
 
         public string DataSetDescription
         {
-            get { return dataSetDescription; }
-            set { dataSetDescription = value; OnPropertyChanged(); }
+            get => dataSetDescription;
+            set
+            {
+                dataSetDescription = value;
+                OnPropertyChanged();
+            }
         }
 
         private string coordinator;
 
         public string Coordinator
         {
-            get { return coordinator; }
-            set { coordinator = value; OnPropertyChanged(); }
+            get => coordinator;
+            set
+            {
+                coordinator = value;
+                OnPropertyChanged();
+            }
         }
 
-        private String status;
+        private string status;
 
-        public String Status
+        public string Status
         {
-            get { return status; }
-            set { status= value; OnPropertyChanged(); }
+            get => status;
+            set
+            {
+                status = value;
+                OnPropertyChanged();
+            }
         }
 
-        public List<Field> Fields { get => fields; set => fields = value; }
+        public List<Field> Fields { get; set; }
 
-        private List<Field> fields;
-
+        public Form()
+        {
+            dataSetName = "";
+            dataSetDescription = "";
+            coordinator = "";
+            status = "";
+            Fields = new List<Field>();
+        }
     }
 }

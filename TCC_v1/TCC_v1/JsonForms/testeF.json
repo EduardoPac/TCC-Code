@@ -1,0 +1,209 @@
+{
+  "DataSetName": "Questionario Socioeconômico",
+  "DataSetDescription": "Formulario para validação do aplcativo DataSearch",
+  "Coordinator": "Eduardo",
+  "Status": "active",
+  "Fields": [
+    {
+      "FieldName": "Qual o seu Nome? ",
+      "Description": "Digitar o nome no campo de digitação acima",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Qual a sua idade? ",
+      "Description": "Arrastar a barra para encontrar a sua idade",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Qual o seu Sexo? ",
+      "Description": "Selecione seu sexo na lista de itens",
+      "Type": "String",
+      "Order": 5,
+      "Min": 0,
+      "Max": 0,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Masculino",
+          "IdItem": 1
+        },
+        {
+
+          "Name": "Feminino",
+          "IdItem": 2
+        },
+        {
+
+          "Name": "Indefinido",
+          "IdItem": 3
+        }
+      ]
+    },
+    {
+      "FieldName": "Estado Civil? ",
+      "Description": "Selecione o estado civil na lista de estados",
+      "Type": "String",
+      "Order": 5,
+      "Min": 0,
+      "Max": 0,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Solteiro",
+          "IdItem": 1
+        },
+        {
+
+          "Name": "Casado",
+          "IdItem": 2
+        },
+        {
+
+          "Name": "Viuvo",
+          "IdItem": 3
+        },
+        {
+
+          "Name": "Outro",
+          "IdItem": 4
+        }
+      ]
+    },
+    {
+      "FieldName": "Você se considera? ",
+      "Description": "Selecione sua raça/cor",
+      "Type": "String",
+      "Order": 5,
+      "Min": 0,
+      "Max": 0,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": false,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Branco",
+          "IdItem": 1
+        },
+        {
+
+          "Name": "Negro",
+          "IdItem": 2
+        },
+        {
+
+          "Name": "Pardo",
+          "IdItem": 3
+        },
+        {
+
+          "Name": "Amarelo",
+          "IdItem": 4
+        },
+        {
+
+          "Name": "Indigena",
+          "IdItem": 4
+        }
+      ]
+    },
+    {
+      "FieldName": "Quantos membros da sua familia moram com você? ",
+      "Description": "Digite a quantidade de familiares moram com você",
+      "Type": "Number",
+      "Order": 2,
+      "Min": 0,
+      "Max": 10,
+      "PrimaryKey": false,
+      "Required": true,
+      "Controlled": false,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    
+    {
+      "FieldName": "Você possui algum veiculo(moto/carro)? ",
+      "Description": "Clique no switch para selecionar a resposta",
+      "Type": "String",
+      "Order": 2,
+      "Min": 0,
+      "Max": 50,
+      "PrimaryKey": true,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": true,
+      "ListItems": [
+        {
+          "Name": "Yes",
+          "IdItem": 1
+        },
+        {
+
+          "Name": "No",
+          "IdItem": 2
+        }
+        ]
+    },
+    {
+      "FieldName": "Data atual? ",
+      "Description": "Seleciona a data de coleta clicando na data",
+      "Type": "Date",
+      "Order": 3,
+      "Min": 12112015,
+      "Max": 30112030,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Hora atual? ",
+      "Description": "Seleciona a hora da coleta clicando na hora acima",
+      "Type": "Time",
+      "Order": 3,
+      "Min": 12112015,
+      "Max": 30112030,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    },
+    {
+      "FieldName": "Local atual? ",
+      "Description": "Seleciona o local da coleta apartir do GPS do aparelho",
+      "Type": "Location",
+      "Order": 4,
+      "Min": 8,
+      "Max": 18,
+      "PrimaryKey": false,
+      "Required": false,
+      "Controlled": true,
+      "SelectFromList": false,
+      "ListItems": []
+    }
+  ]
+}

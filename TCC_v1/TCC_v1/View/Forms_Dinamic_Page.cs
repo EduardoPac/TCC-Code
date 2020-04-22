@@ -13,9 +13,9 @@ namespace TCC_v1.View
 {
     class Forms_Dinamic_Page: ContentPage
     {
-        public Forms_Dinamic_Page(Form form, int index, List<FieldAnswerBD> resp)
+        public Forms_Dinamic_Page(Form form, int index, List<FieldAnswer> resp)
         {
-            Title = form.DatasetName;
+            Title = form.DataSetName;
 
             //Pega o campo que será mostrado
             Field field = new Field();
@@ -47,7 +47,7 @@ namespace TCC_v1.View
         //    // caso seja um campo de string
             if (field.Type == "String")
             {
-                if (field.SelectFromList == true && field.ListItens[0].Name == "Yes")
+                if (field.SelectFromList == true && field.ListItems[0].Name == "Yes")
                 {
                     StackLayout stackSwitch = new StackLayout() { Orientation = StackOrientation.Horizontal };
 
@@ -74,14 +74,14 @@ namespace TCC_v1.View
                     stacklayout.Children.Add(stackSwitch);
                 }
 
-                else if (field.SelectFromList == true && field.ListItens[0].Name != "Yes")
+                else if (field.SelectFromList == true && field.ListItems[0].Name != "Yes")
                 {
 
                     pic = new Picker() { HorizontalOptions = LayoutOptions.FillAndExpand, TextColor = Color.Black };
-                    for (int j = 0; j < field.ListItens.Count; j++)
+                    for (int j = 0; j < field.ListItems.Count; j++)
                     {
 
-                        pic.Items.Add(field.ListItens[j].Name);
+                        pic.Items.Add(field.ListItems[j].Name);
 
                     }
 
@@ -101,7 +101,7 @@ namespace TCC_v1.View
             //    //Regra para criar Campos de Number
             if (field.Type == "Number")
             {
-                if (field.Controled == true)
+                if (field.Controlled == true)
                 {
                     entradaNumero = new Entry { IsEnabled = false,FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)), Keyboard = Keyboard.Numeric, TextColor = Color.Black, HorizontalOptions = LayoutOptions.FillAndExpand, Placeholder = field.Min.ToString() };
 
@@ -278,31 +278,31 @@ namespace TCC_v1.View
                 {
                     if (field.Required == true)
                     {
-                        Form_Dinamic_view_model save = new Form_Dinamic_view_model();
+                        FormDynamicViewModel save = new FormDynamicViewModel();
                         if (field.Type == "String")
                         {
-                            if (field.SelectFromList == true && field.ListItens[0].Name == "Yes" && (switcher.IsToggled == true || switcher2.IsToggled == true)) { resp.Add(Strbool(switcher, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
-                            else if (field.SelectFromList == true && field.ListItens[0].Name != "Yes") { resp.Add(Strlist(pic, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
-                            else if (entradaTexto.Text != null) { resp.Add(Strnorm(entradaTexto, field)); save.SaveDAL(resp, form); await Navigation.PopToRootAsync(); }
+                            if (field.SelectFromList == true && field.ListItems[0].Name == "Yes" && (switcher.IsToggled == true || switcher2.IsToggled == true)) { resp.Add(Strbool(switcher, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
+                            else if (field.SelectFromList == true && field.ListItems[0].Name != "Yes") { resp.Add(Strlist(pic, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
+                            else if (entradaTexto.Text != null) { resp.Add(Strnorm(entradaTexto, field)); FormDynamicViewModel.SaveData(resp, form); await Navigation.PopToRootAsync(); }
                             else { await DisplayAlert("Alert", "The question must be answered", "OK"); }
                         }
 
                         else if (field.Type == "Number")
                         {
-                            if (field.Controled == true && entradaNumero.Text != null) { resp.Add(Numcontr(entradaNumero, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
-                            else if (entradaNumero.Text != null) { resp.Add(Numnorm(entradaNumero, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
+                            if (field.Controlled == true && entradaNumero.Text != null) { resp.Add(Numcontr(entradaNumero, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
+                            else if (entradaNumero.Text != null) { resp.Add(Numnorm(entradaNumero, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
                             else { await DisplayAlert("Alert", "The question must be answered", "OK"); }
                         }
-                        else if (field.Type == "Date") { resp.Add(Date(datePicker, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
-                        else if (field.Type == "Time") { resp.Add(Time(timePicker, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK");  await Navigation.PopToRootAsync(); }
+                        else if (field.Type == "Date") { resp.Add(Date(datePicker, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
+                        else if (field.Type == "Time") { resp.Add(Time(timePicker, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK");  await Navigation.PopToRootAsync(); }
                         else if (field.Type == "Image")
                         {
-                            if (Pickfoto_btn.IsEnabled == false) { resp.Add(Image(beachImage, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
+                            if (Pickfoto_btn.IsEnabled == false) { resp.Add(Image(beachImage, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); await Navigation.PopToRootAsync(); }
                             else { await DisplayAlert("Alert", "The question must be answered", "OK"); }
                         }
                         else if (field.Type == "Location")
                         {
-                            if (entradaLatitude.Text != null && entradaLongitude.Text != null) { resp.Add(Location(entradaLatitude, entradaLongitude, field)); save.SaveDAL(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); ; await Navigation.PopToRootAsync(); }
+                            if (entradaLatitude.Text != null && entradaLongitude.Text != null) { resp.Add(Location(entradaLatitude, entradaLongitude, field)); FormDynamicViewModel.SaveData(resp, form); await DisplayAlert("Save", "Your answers have been successfully saved", "OK"); ; await Navigation.PopToRootAsync(); }
                             else { await DisplayAlert("Alert", "The question must be answered", "OK"); }
                         }
 
@@ -311,17 +311,17 @@ namespace TCC_v1.View
 
                     if (field.Required == false)
                     {
-                        Form_Dinamic_view_model save = new Form_Dinamic_view_model();
+                        FormDynamicViewModel save = new FormDynamicViewModel();
                         if (field.Type == "String")
                         {
-                            if (field.SelectFromList == true && field.ListItens[0].Name == "Yes") { resp.Add(Strbool(switcher, field)); }
-                            else if (field.SelectFromList == true && field.ListItens[0].Name != "Yes") { resp.Add(Strlist(pic, field)); }
+                            if (field.SelectFromList == true && field.ListItems[0].Name == "Yes") { resp.Add(Strbool(switcher, field)); }
+                            else if (field.SelectFromList == true && field.ListItems[0].Name != "Yes") { resp.Add(Strlist(pic, field)); }
                             else { resp.Add(Strnorm(entradaTexto, field)); }
                         }
 
                         else if (field.Type == "Number")
                         {
-                            if (field.Controled == true) { resp.Add(Numcontr(entradaNumero, field)); }
+                            if (field.Controlled == true) { resp.Add(Numcontr(entradaNumero, field)); }
                             else { resp.Add(Numnorm(entradaNumero, field)); }
                         }
                         else if (field.Type == "Date") { resp.Add(Date(datePicker, field)); }
@@ -330,7 +330,7 @@ namespace TCC_v1.View
                         else if (field.Type == "Location") { resp.Add(Location(entradaLatitude, entradaLongitude, field)); }
 
                         //converte as caracteristicas do formulario para o formulario de resposta
-                        save.SaveDAL(resp, form);
+                        FormDynamicViewModel.SaveData(resp, form);
 
                         await Navigation.PopToRootAsync();
 
@@ -349,15 +349,15 @@ namespace TCC_v1.View
                     {
                         if (field.Type == "String")
                         {
-                            if (field.SelectFromList == true && field.ListItens[0].Name == "Yes" && (switcher.IsToggled == true || switcher2.IsToggled == true)) { resp.Add(Strbool(switcher, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
-                            else if (field.SelectFromList == true && field.ListItens[0].Name != "Yes") { resp.Add(Strlist(pic, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
+                            if (field.SelectFromList == true && field.ListItems[0].Name == "Yes" && (switcher.IsToggled == true || switcher2.IsToggled == true)) { resp.Add(Strbool(switcher, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
+                            else if (field.SelectFromList == true && field.ListItems[0].Name != "Yes") { resp.Add(Strlist(pic, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
                             else if (entradaTexto.Text != null) { resp.Add(Strnorm(entradaTexto, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
                             else { await DisplayAlert("Alert", "The question must be answered", "OK"); }
                         }
 
                         else if (field.Type == "Number")
                         {
-                            if (field.Controled == true && entradaNumero.Text != null) { resp.Add(Numcontr(entradaNumero, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
+                            if (field.Controlled == true && entradaNumero.Text != null) { resp.Add(Numcontr(entradaNumero, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
                             else if(entradaNumero.Text != null) { resp.Add(Numnorm(entradaNumero, field)); await Navigation.PushAsync(new Forms_Dinamic_Page(form, index + 1, resp)); }
                             else { await DisplayAlert("Alert", "The question must be answered", "OK"); }
                         }
@@ -379,14 +379,14 @@ namespace TCC_v1.View
                     {
                         if (field.Type == "String")
                         {
-                            if (field.SelectFromList == true && field.ListItens[0].Name == "Yes") { resp.Add(Strbool(switcher, field)); }
-                            else if (field.SelectFromList == true && field.ListItens[0].Name != "Yes") { resp.Add(Strlist(pic, field)); }
+                            if (field.SelectFromList == true && field.ListItems[0].Name == "Yes") { resp.Add(Strbool(switcher, field)); }
+                            else if (field.SelectFromList == true && field.ListItems[0].Name != "Yes") { resp.Add(Strlist(pic, field)); }
                             else { resp.Add(Strnorm(entradaTexto, field)); }
                         }
 
                         else if (field.Type == "Number")
                         {
-                            if (field.Controled == true) { resp.Add(Numcontr(entradaNumero, field)); }
+                            if (field.Controlled == true) { resp.Add(Numcontr(entradaNumero, field)); }
                             else { resp.Add(Numnorm(entradaNumero, field)); }
                         }
                         else if (field.Type == "Date") { resp.Add(Date(datePicker, field)); }
@@ -420,9 +420,9 @@ namespace TCC_v1.View
         }
 
         ////metodos de coletar as answerostas da interface
-        public FieldAnswerBD Strbool(Switch a, Field c)
+        public FieldAnswer Strbool(Switch a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             if (a.IsToggled == true) { rep.Answer = "true"; }
             else if (a.IsToggled == false) { rep.Answer = "false"; };
@@ -430,71 +430,71 @@ namespace TCC_v1.View
             return rep;
         }
 
-        public FieldAnswerBD Strlist(Picker a, Field c)
+        public FieldAnswer Strlist(Picker a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             int k = a.SelectedIndex;
-            rep.Answer = c.ListItens[k].Name;
+            rep.Answer = c.ListItems[k].Name;
             
             return rep;
         }
 
-        public FieldAnswerBD Strnorm(Entry a, Field c)
+        public FieldAnswer Strnorm(Entry a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             rep.Answer = a.Text;
 
             return rep;
         }
 
-        public FieldAnswerBD Numcontr(Entry a, Field c)
+        public FieldAnswer Numcontr(Entry a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             rep.Answer = a.Text;
 
             return rep;
         }
 
-        public FieldAnswerBD Numnorm(Entry a, Field c)
+        public FieldAnswer Numnorm(Entry a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             rep.Answer = a.Text;
 
             return rep;
         }
 
-        public FieldAnswerBD Date(DatePicker a, Field c)
+        public FieldAnswer Date(DatePicker a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             rep.Answer = a.Date.Day.ToString() + "/" + a.Date.Month.ToString() + "/" + a.Date.Year.ToString();
             
             return rep;
         }
 
-        public FieldAnswerBD Time(TimePicker a, Field c)
+        public FieldAnswer Time(TimePicker a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             rep.Answer = a.Time.Hours.ToString() + ":" + a.Time.Minutes.ToString();
             
             return rep;
         }
-        public FieldAnswerBD Image(Image a, Field c)
+        public FieldAnswer Image(Image a, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             rep.Answer = a.Source.ToString();
             
             return rep;
         }
-        public FieldAnswerBD Location(Entry a, Entry b, Field c)
+        public FieldAnswer Location(Entry a, Entry b, Field c)
         {
-            FieldAnswerBD rep = new FieldAnswerBD();
+            FieldAnswer rep = new FieldAnswer();
             rep.Question = c.FieldName;
             rep.Answer = a.Text + "," + b.Text;
             

@@ -9,44 +9,34 @@ namespace TCC_v1.Pages
 {
     public class RootPage : MasterDetailPage
     {
-        MenuPage menuPage;
+        private readonly MenuPage menuPage;
 
         public RootPage()
         {
             menuPage = new MenuPage();
-
             menuPage.Menu.ItemSelected += (sender, e) => NavigateTo(e.SelectedItem as MenuItem);
-
             Master = menuPage;
-
             Detail = new NavigationPage(new TabPage());
         }
 
-        async void NavigateTo(MenuItem menu)
+        private async void NavigateTo(MenuItem menu)
         {
-            if (menu == null){
+            if (menu == null)
                 return;
-            }
 
-            Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
+            var displayPage = (Page) Activator.CreateInstance(menu.TargetType);
 
             try
             {
                 Detail = new NavigationPage(displayPage);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("ERRO", "Erro " + ex.Message, "OK");
+                await Application.Current.MainPage.DisplayAlert("ERRO", "Erro " + ex.Message, "OK");
             }
 
             menuPage.Menu.SelectedItem = null;
             IsPresented = false;
-
-
         }
-
-
-
-
     }
 }

@@ -9,9 +9,9 @@ namespace TCC_v1.View
 {
     public class PaginaResposta : ContentPage
     {
-        public PaginaResposta(List<FieldAnswerBD> resp, FormAnswerBD form)
+        public PaginaResposta(List<FieldAnswer> resp, FormAnswer form)
         {
-            Title = form.DatasetName;
+            Title = form.DataSetName;
 
             StackLayout stacklayout = new StackLayout() { Margin = new Thickness(8, 0, 8, 0), VerticalOptions = LayoutOptions.Fill, HorizontalOptions = LayoutOptions.Fill };
             for (int x = 0; x < resp.Count; x++)

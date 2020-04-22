@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TCC_v1.View.AboutPage"
+             Title="About">
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+            <Label
+                HorizontalTextAlignment="Center"
+                FontSize="Large"
+                VerticalTextAlignment = "Center"
+                Text="This app was made for my TCC of the Computer Science Course at UENP. The app's proposal is to generate dynamic interfaces from an initial configuration JSON."/>
+        </StackLayout> 
+</ContentPage>

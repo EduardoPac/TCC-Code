@@ -39,28 +39,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DAL\DAL.cs" />
-    <Compile Include="DAL\DALAswer.cs" />
+    <Compile Include="DAL\Database.cs" />
+    <Compile Include="DAL\DatabaseAnswer.cs" />
     <Compile Include="Infra\SqliteDBConnection.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entities\FieldAnswersBD.cs" />
+    <Compile Include="Model\Entities\FieldAnswer.cs" />
     <Compile Include="Model\Entities\Field.cs" />
-    <Compile Include="Model\Entities\FieldBD.cs" />
-    <Compile Include="Model\Entities\FieldDiretory.cs" />
+    <Compile Include="Model\Entities\FieldDb.cs" />
     <Compile Include="Model\Entities\Form.cs" />
     <Compile Include="Model\Entities\FormAnswer.cs" />
-    <Compile Include="Model\Entities\FormAnswerBD.cs" />
-    <Compile Include="Model\Entities\FormAnswerDiretory.cs" />
-    <Compile Include="Model\Entities\FormBD.cs" />
-    <Compile Include="Model\Entities\FormBDDiretory.cs" />
-    <Compile Include="Model\Entities\FormDiretory.cs" />
-    <Compile Include="Model\Entities\ItemBD.cs" />
-    <Compile Include="Model\Entities\ItemDiretory.cs" />
+    <Compile Include="Model\Entities\FormDb.cs" />
+    <Compile Include="Model\Entities\FormDirectory.cs" />
+    <Compile Include="Model\Entities\Item.cs" />
     <Compile Include="Model\Entities\LoadResourceText.cs" />
-    <Compile Include="Model\Entities\ObservatorBaseObject.cs" />
-    <Compile Include="Model\Services\FormDiretoryService.cs" />
+    <Compile Include="Model\Entities\ObservatoryBaseObject.cs" />
+    <Compile Include="Model\Services\FormDirectoryService.cs" />
     <Compile Include="Model\Services\IPicturePicker.cs" />
     <Compile Include="Pages\MenuCell.cs" />
     <Compile Include="Pages\MenuItem.cs" />
@@ -71,29 +63,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\TabPage.cs" />
     <Compile Include="ViewModel\ConvertClass.cs" />
-    <Compile Include="ViewModel\FormDiretoryViewModel.cs" />
+    <Compile Include="ViewModel\FormDirectoryViewModel.cs" />
     <Compile Include="ViewModel\Form_Dinamic_view_model.cs" />
-    <Compile Include="ViewModel\GeoLocationAs.cs" />
-    <Compile Include="View\About_Page.xaml.cs">
-      <DependentUpon>About_Page.xaml</DependentUpon>
+    <Compile Include="View\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Download_Page.xaml.cs">
-      <DependentUpon>Download_Page.xaml</DependentUpon>
+    <Compile Include="View\DownloadPage.xaml.cs">
+      <DependentUpon>DownloadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Forms_Dinamic_Page.cs" />
-    <Compile Include="View\Home_Page.xaml.cs">
-      <DependentUpon>Home_Page.xaml</DependentUpon>
+    <Compile Include="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PaginaResposta.cs" />
-    <Compile Include="View\Upload_Page.xaml.cs">
-      <DependentUpon>Upload_Page.xaml</DependentUpon>
+    <Compile Include="View\UploadPage.xaml.cs">
+      <DependentUpon>UploadPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -135,66 +122,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\Download_Page.xaml">
+    <EmbeddedResource Include="JsonForms\eduardo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\marcelo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\ProtBorboleta.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\ProtMamifr_moduloAv.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\ProtMamifr_modulobas_tl.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\ProtMamifr_modulobas_vest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\ProtPlanta_modulo1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\ProtPlanta_modulo2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\ProtPlanta_modulo3.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\testeF.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonForms\thiago.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DownloadPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\Home_Page.xaml">
+    <EmbeddedResource Include="View\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="eduardo.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="marcelo.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="packages.config" />
-    <EmbeddedResource Include="thiago.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProtBorboleta.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProtMamifr_moduloAv.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProtMamifr_modulobas_tl.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProtMamifr_modulobas_vest.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProtPlanta_modulo1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProtPlanta_modulo2.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProtPlanta_modulo3.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="testeF.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\Upload_Page.xaml">
+    <EmbeddedResource Include="View\UploadPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\About_Page.xaml">
+    <EmbeddedResource Include="View\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.4.1.0.581479\build\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.4.1.0.581479\build\Xamarin.Forms.targets')" />
 </Project>
